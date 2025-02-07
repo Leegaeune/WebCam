@@ -1,0 +1,479 @@
+:root {
+    --primary-color: #43A363;
+    --primary-dark: #306032;
+    --accent-red: #da000d;
+    --accent-orange: #e55733;
+    --accent-pink: #F4ADB3;
+    --accent-yellow: #F5BD33;
+    --text-color: #1C1F23;
+    --bg-dark: #1c1f23;
+    --gray-light: #F8F8F8;
+}
+
+/* 헤더 스타일 */
+.navbar {
+    background: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #1C1F23;
+}
+
+.logo-img {
+    height: 30px;
+    margin-right: 10px;
+}
+
+/* 모드 전환 버튼 스타일 */
+.mode-toggle {
+    display: flex;
+    gap: 80px;
+    margin-bottom: 15px;
+}
+
+.toggle-btn {
+    flex: 30;
+    padding: 16px;
+    border: none;
+    border-radius: 40px;
+    background: #f0f0f0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn.active {
+    background: #43A363;
+    color: white;
+}
+
+/* 패널 스타일 */
+.panel {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.panel.active {
+    display: block;
+    opacity: 1;
+}
+
+/* 타이머 스타일 개선 */
+.timer-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.timer-display {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.monitoring-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    padding: 80px 20px 20px;
+    max-width: 1600px;
+    margin: 0 auto;
+    margin-bottom: 230px;
+    height: calc(100vh - 100px);
+}
+
+/* 비디오 섹션 */
+.video-section {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.video-container {
+    width: 100%;
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ddd;
+}
+
+.video-feed {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: #f5f5f5;
+}
+
+.video-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.video-controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.timer-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 15px;
+    background: #333;
+    border-radius: 8px;
+}
+
+/* 컨트롤 섹션 */
+.control-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.settings-panel,
+.memo-panel,
+.todo-panel {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.setting-item {
+    margin: 10px 0;
+}
+
+textarea#studyMemo {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    resize: vertical;
+}
+
+.todo-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+#todoList {
+    list-style: none;
+    padding: 0;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 8px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+.todo-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.todo-content {
+    flex: 1;
+}
+
+.delete-todo {
+    margin-left: auto;
+}
+
+.todo-item input[type="checkbox"] {
+    margin: 0;
+    cursor: pointer;
+}
+
+.delete-todo {
+    background-color: #E55733;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+.delete-todo:hover {
+    background-color: #DA000D;
+}
+
+/* 알림 모달 */
+.alert-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.alert-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.video-container img {
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.saved-memos {
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+}
+
+.saved-memos h4 {
+    margin-bottom: 10px;
+}
+
+#memoList {
+    list-style: none;
+    padding: 0;
+}
+
+.memo-item {
+    background-color: #f8f9fa;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.memo-content {
+    flex: 1;
+    margin-right: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.delete-memo {
+    background-color: #E55733;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+.delete-memo:hover {
+    background-color: #DA000D;
+}
+
+/* 스톱워치 섹션 스타일 */
+.stopwatch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.time-display {
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333;
+    background: white;
+    padding: 8px 28px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.stopwatch-controls {
+    display: flex;
+    gap: 10px;
+
+}
+
+.stopwatch-controls button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+#startBtn {
+    margin-left: 10px;
+    background-color: #e55733;
+    color: white;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+#startBtn:hover {
+    opacity: 0.9;
+}
+
+#resetBtn {
+    margin-left: 10px;
+    background-color: #F8F8F8;
+    color: var(--text-color);
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+#resetBtn:hover {
+    opacity: 0.9;
+}
+
+.timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.timer-display {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.time-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.time-unit input {
+    width: 40px;
+    text-align: center;
+    font-size: 1.2rem;
+    border: none;
+    background: transparent;
+    padding: 5px;
+    color: white;
+}
+
+.time-btn {
+    background: #f0f0f0;
+    border: none;
+    border-radius: 40px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.time-btn:hover {
+    background: #e0e0e0;
+}
+
+#startTimer {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+#startTimer:hover {
+    background-color: #45a049;
+}
+
+.time-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.mode-toggle {
+    display: flex;
+    gap: 10px;
+}
+
+.time-display {
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 15px 30px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.time-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.timer-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.common-controls {
+    display: flex;
+    gap: 10px;
+}
+
+footer {
+    flex-shrink: 0; /* 푸터가 압축되지 않도록 설정 */
+    position: relative; /* fixed 대신 relative로 변경 */
+    bottom: auto; /* 위치 고정 제거 */
+    width: 100%;
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    margin-top: 20px; /* 컨텐츠와 푸터 사이 여백 */
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이페이지 - Study Posture</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mypage.css') }}">
+    <!-- Chart.js 추가 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <nav> <!--common.css nav-->
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Study Posture 로고" class="logo-img">
+                <a href="/">꺼북e</a>
+            </div>
+            <div class="nav-links">
+                <a href="/monitoring">모니터링</a>
+                <button id="logoutBtn">로그아웃</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="mypage-container">
+        <!-- 프로필 섹션 -->
+        <section class="profile-section">
+            <div class="profile-info">
+                <div class="profile-image">
+                    <img src="{{ url_for('static', filename='images/default-profile.png') }}" alt="프로필 이미지">
+                </div>
+                <div class="profile-details">
+                    <h2>홍길동</h2>
+                    <p>hong@gm.hannam.ac.kr</p>
+                    <button id="editProfileBtn">수정</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 통계 섹션 -->
+        <section class="stats-section">
+            <h2>학습 통계</h2>
+            <div class="stats-container">
+                <div class="stats-card">
+                    <h3>총 학습 시간</h3>
+                    <div class="stats-chart">
+                        <canvas id="studyTimeChart"></canvas>
+                    </div>
+                </div>
+                <div class="stats-card">
+                    <h3>자세 분석</h3>
+                    <div class="stats-chart">
+                        <canvas id="postureChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 녹화 영상 갤러리 -->
+        <section class="gallery-section">
+            <h2>녹화 영상 갤러리</h2>
+            <div class="gallery-filters">
+                <select id="dateFilter">
+                    <option value="all">전체 기간</option>
+                    <option value="week">이번 주</option>
+                    <option value="month">이번 달</option>
+                </select>
+                <input type="text" id="searchVideo" placeholder="영상 검색...">
+            </div>
+            <div class="video-grid">
+                <!-- 동적으로 비디오 카드가 추가될 영역 -->
+            </div>
+            <div class="pagination">
+                <button id="prevPage">이전</button>
+                <span id="currentPage">1</span> / <span id="totalPages">1</span>
+                <button id="nextPage">다음</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- 회원정보 수정 모달 -->
+    <div id="editProfileModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>회원정보 수정</h2>
+            <form id="editProfileForm">
+                <div class="form-group">
+                    <label>이름</label>
+                    <input type="text" id="userName" required>
+                </div>
+                <div class="form-group">
+                    <label>이메일</label>
+                    <input type="email" id="userEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>현재 비밀번호</label>
+                    <input type="password" id="currentPassword">
+                </div>
+                <div class="form-group">
+                    <label>새 비밀번호</label>
+                    <input type="password" id="newPassword">
+                </div>
+                <div class="form-group">
+                    <label>새 비밀번호 확인</label>
+                    <input type="password" id="confirmPassword">
+                </div>
+                <button type="submit">저장</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/mypage.js') }}"></script>
+</body>
+
+{% include 'components/footer.html' %}
+
+</html>
